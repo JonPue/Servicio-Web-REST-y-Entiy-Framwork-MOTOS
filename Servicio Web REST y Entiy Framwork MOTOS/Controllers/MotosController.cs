@@ -9,12 +9,15 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Servicio_Web_REST_y_Entiy_Framwork_MOTOS.Models;
+using System.Web.Http.Cors;
 
 namespace Servicio_Web_REST_y_Entiy_Framwork_MOTOS.Controllers
 {
     public class MotosController : ApiController
     {
         private ContextoMotos db = new ContextoMotos();
+
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
 
         // GET: api/Motos
         public IQueryable<Motos> GetMotos()
